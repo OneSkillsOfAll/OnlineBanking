@@ -1,5 +1,4 @@
 import mysql.connector
-from menu import parameters
 
 credentials = {
   "host": "localhost",
@@ -20,8 +19,8 @@ def create_tables(parameters):
 
 # Insert initial data
 def insert_initial_data():
-    cursor.execute("INSERT INTO users (account_number, pin, is_admin) VALUES ('123456', '1234', 1)")
-    connection.commit()
+  cursor.execute("INSERT INTO users (account_number, pin, is_admin) VALUES ('123456', '1234', 1)")
+  connection.commit()
 
 # Other database functions
 

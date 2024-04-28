@@ -1,10 +1,11 @@
 from database import cursor, connection
+parameters = (None, None, None)
 
 # Int value input error net
-def int_input(value, text):
+def spec_input(classtype, value, text):
     while True:
         try:
-            value = int(input(text))
+            value = classtype(input(text))
             return value
         except ValueError:
             print("Invalid input.")
