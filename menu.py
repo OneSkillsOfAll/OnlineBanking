@@ -53,7 +53,7 @@ def execute_choice(choice):
         last_name = input("Enter your last name: ")
         int_input(account_number, "Enter your account number: ")
         parameters = (first_name, last_name, account_number)
-        create_table(parameters)
+        create_tables(parameters)
     
     # Implement delete account function
     elif choice.find("5") == 0:
