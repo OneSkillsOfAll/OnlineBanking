@@ -1,5 +1,5 @@
 from database import create_tables
-from avariables import account_number
+from variables import account_number
 from functions import check_balance, deposit, withdraw, delete_account, modify_account, int_input
 import inquirer
 
