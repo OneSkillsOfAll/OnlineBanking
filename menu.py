@@ -1,7 +1,8 @@
 from database import create_tables, cursor
-from variables import id, parameters
+from variables import id, pin, parameters
 from functions import check_balance, deposit, withdraw, delete_account, modify_account, spec_input
 import inquirer
+import random
 
 def ask(message, choices):
     return inquirer.prompt([inquirer.List('',message,choices)])[""]
@@ -47,12 +48,11 @@ def execute_choice(choice):
       else:
           print("Failed to withdraw.")
     
-    # Implement create account function
+    # Implement create account choice
     elif choice.find("4") == 0:
-        first_name = input("Enter your first name: ")
-        last_name = input("Enter your last name: ")
-        spec_input(int, id, "Enter your account number: ")
-        parameters = (first_name, last_name, id)
+        genID = random.randint(1, 99999)
+        spec_input(int, pin, "Enter your account number: ")
+        parameters = (genID, pin, 1000, False)
         create_tables(parameters)
     
     # Implement delete account function

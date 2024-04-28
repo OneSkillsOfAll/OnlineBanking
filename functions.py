@@ -1,12 +1,3 @@
-# Int value input error net
-def spec_input(classtype, value, text):
-    while True:
-        try:
-            value = classtype(input(text))
-            return value
-        except ValueError:
-            print("Invalid input.")
-
 # Function to check balance
 def check_balance(cursor, id):
     cursor.execute("SELECT balance FROM users WHERE id = %s", (id,))
@@ -60,3 +51,12 @@ def modify_account(cursor, connection, id, new_pin):
         return False
 
 # Other banking functions
+
+# Int value input error net
+def spec_input(classtype, value, text):
+    while True:
+        try:
+            value = classtype(input(text))
+            return value
+        except ValueError:
+            print("Invalid input.")
