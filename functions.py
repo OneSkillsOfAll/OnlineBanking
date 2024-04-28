@@ -9,14 +9,14 @@ def spec_input(classtype, value, text):
 
 # Function to check balance
 def check_balance(cursor, account_number):
-    cursor.execute("SELECT balance FROM accounts WHERE account_number = %s", (account_number))
+    cursor.execute("SELECT balance FROM users WHERE account_number = %s", (account_number,))
     balance = cursor.fetchone()
     return balance[0] if balance else None
 
 # Function to deposit amount into an account
 def deposit(cursor, connection, account_number, amount):
   try:
-      cursor.execute("UPDATE accounts SET balance = balance + %s WHERE account_number = %s", (amount, account_number))
+      cursor.execute("UPDATE users SET balance = balance + %s WHERE account_number = %s", (amount, account_number,))
       connection.commit()
       return True
   except Exception as e:
@@ -26,10 +26,10 @@ def deposit(cursor, connection, account_number, amount):
 # Function to withdraw amount from an account
 def withdraw(cursor, connection, account_number, amount):
     try:
-        cursor.execute("SELECT balance FROM accounts WHERE account_number = %s", (account_number))
+        cursor.execute("SELECT balance FROM users WHERE account_number = %s", (account_number,))
         balance = cursor.fetchone()
         if balance and balance[0] >= amount:
-            cursor.execute("UPDATE accounts SET balance = balance - %s WHERE account_number = %s", (amount, account_number))
+            cursor.execute("UPDATE users SET balance = balance - %s WHERE account_number = %s", (amount, account_number,))
             connection.commit()
             return True
         else:
@@ -42,7 +42,7 @@ def withdraw(cursor, connection, account_number, amount):
 # Function to delete an account
 def delete_account(cursor, connection, account_number):
     try:
-        cursor.execute("DELETE FROM accounts WHERE account_number = %s", (account_number))
+        cursor.execute("DELETE FROM users WHERE account_number = %s", (account_number,))
         connection.commit()
         return True
     except Exception as e:
@@ -52,7 +52,7 @@ def delete_account(cursor, connection, account_number):
 # Function to modify the PIN of an account
 def modify_account(cursor, connection, account_number, new_pin):
     try:
-        cursor.execute("UPDATE users SET pin = %s WHERE account_number = %s", (new_pin, account_number))
+        cursor.execute("UPDATE users SET pin = %s WHERE account_number = %s", (new_pin, account_number,))
         connection.commit()
         return True
     except Exception as e:

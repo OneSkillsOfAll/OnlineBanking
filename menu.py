@@ -23,7 +23,7 @@ def execute_choice(choice):
     # Implement balance function
     if choice.find("1") == 0:
         spec_input(int, account_number, "Enter your account number: ")
-        balance = check_balance(cursor, account_number)
+        balance = check_balance(cursor, account_number,)
         if balance:
             print(f"Your current balance is: ${balance}")
         else:
@@ -58,7 +58,7 @@ def execute_choice(choice):
     # Implement delete account function
     elif choice.find("5") == 0:
         spec_input(int, account_number, "Enter the account number to delete: ")
-        success = delete_account(cursor, account_number)
+        success = delete_account(cursor, account_number,)
         if success:
             print("Account deleted successfully.")
         else:
