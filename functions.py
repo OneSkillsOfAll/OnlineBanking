@@ -1,5 +1,14 @@
 from database import cursor, connection
 
+# Int value input error net
+def int_input(value, text):
+    while True:
+        try:
+            value = int(input(text))
+            return value
+        except ValueError:
+            print("Invalid input.")
+
 # Function to check balance
 def check_balance(account_number):
     cursor.execute("SELECT balance FROM accounts WHERE account_number = %s", (account_number))
