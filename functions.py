@@ -1,3 +1,6 @@
+from database import create_tables
+from menu import parameters
+
 # Function to check balance
 def check_balance(cursor, id):
     cursor.execute("SELECT balance FROM users WHERE id = %s", (id,))
@@ -29,6 +32,10 @@ def withdraw(cursor, connection, id, amount):
     except Exception as e:
         print("Error:", e)
         return False
+
+#Function to create an account
+def create_account():
+    create_tables(parameters)
 
 # Function to delete an account
 def delete_account(cursor, connection, id):

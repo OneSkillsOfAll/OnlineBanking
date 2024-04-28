@@ -53,7 +53,7 @@ def execute_choice(choice):
     # Implement create account choice
     elif choice.find("4") == 0:
         genID = random.randint(1, 99999)
-        spec_input(int, pin, "Enter your pin number: ")
+        spec_input(int, pin, "Enter your PIN number: ")
         parameters = (genID, pin, 1000, False)
         create_tables(parameters)
     
