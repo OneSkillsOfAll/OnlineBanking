@@ -1,8 +1,10 @@
 from database import create_tables, cursor
-from variables import id, pin, parameters
+from variables import id, parameters
 from functions import check_balance, deposit, withdraw, delete_account, modify_account, spec_input
 import inquirer
 import random
+
+pin = 0
 
 def ask(message, choices):
     return inquirer.prompt([inquirer.List('',message,choices)])[""]
