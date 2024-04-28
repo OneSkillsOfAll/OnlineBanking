@@ -15,13 +15,12 @@ cursor = connection.cursor()
 
 # Create tables
 def create_tables(parameters = tuple()):
-  sql = "insert into users (first_name, last_name, pin) values (%s, %s, %s)"
+  sql = "INSERT INTO users (id, pin, balance) VALUES (%s, %s, %s)"
   cursor.execute(sql, parameters)
 
 # Insert initial data
 def insert_initial_data():
-  cursor.execute("insert into users (account_number, pin, is_admin) values ('123456', '1234', 1)")
+  cursor.execute("INSERT INTO users (id, pin, is_admin) VALUES ('123456', '1234', 1)")
   connection.commit()
 
 # Other database functions
-
