@@ -1,5 +1,5 @@
 import mysql.connector
-from functions import parameters
+from variables import parameters
 
 credentials = {
   "host": "localhost",
@@ -14,8 +14,8 @@ connection = mysql.connector.connect(**credentials, autocommit = True)
 cursor = connection.cursor()
 
 # Create tables
-def create_tables(parameters):
-  sql = "INSERT INTO users (first_name, last_name, pin) VALUES (%s, %s, %s)"
+def create_tables(parameters = tuple()):
+  sql = "insert into users (first_name, last_name, pin) values (%s, %s, %s)"
   cursor.execute(sql, parameters)
 
 # Insert initial data

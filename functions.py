@@ -1,5 +1,4 @@
-from database import cursor, connection
-parameters = ("", "", "")
+from database import connection, cursor
 
 # Int value input error net
 def spec_input(classtype, value, text):
