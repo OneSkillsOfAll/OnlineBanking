@@ -1,8 +1,7 @@
 from database import create_tables
-from variables import account_number
+from variables import account_number, parameters
 from functions import check_balance, deposit, withdraw, delete_account, modify_account, spec_input
 import inquirer
-from functions import parameters
 
 def ask(message, choices):
     return inquirer.prompt([inquirer.List('',message,choices)])[""]
