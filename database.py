@@ -20,7 +20,7 @@ def create_tables(parameters = tuple()):
 
 # Insert initial data
 def insert_initial_data():
-  cursor.execute("INSERT INTO users (account_number, pin, is_admin) VALUES ('123456', '1234', 1)")
+  cursor.execute("insert into users (account_number, pin, is_admin) values ('123456', '1234', 1)")
   connection.commit()
 
 # Other database functions
