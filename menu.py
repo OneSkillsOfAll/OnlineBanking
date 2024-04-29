@@ -56,6 +56,7 @@ def execute_choice(choice):
         spec_input(int, pin, "Enter your PIN number: ")
         parameters = (genID, pin, int(1000), False)
         create_account(parameters)
+        print("Your ID is " + str(genID))
     
     # Implement delete account function
     elif choice.find("5") == 0:
