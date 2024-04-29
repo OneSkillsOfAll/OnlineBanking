@@ -36,7 +36,7 @@ def execute_choice(choice):
     elif choice.find("2") == 0:
       spec_input(int, id, "Enter your account number: ")
       amount = float(input("Enter the amount to deposit: $"))
-      success = deposit(cursor, id, amount)
+      success = deposit(cursor, connection, id, amount)
       if success:
           print("Deposit successful.")
 
