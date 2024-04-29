@@ -1,5 +1,4 @@
 from database import create_tables
-from variables import parameters
 
 # Function to check balance
 def check_balance(cursor, id):
@@ -34,8 +33,8 @@ def withdraw(cursor, connection, id, amount):
         return False
 
 #Function to create an account
-def create_account():
-    create_tables(parameters)
+def create_account(para):
+    create_tables(para)
 
 # Function to delete an account
 def delete_account(cursor, connection, id):
