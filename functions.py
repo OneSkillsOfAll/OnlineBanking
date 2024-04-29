@@ -1,5 +1,5 @@
 from database import create_tables
-from menu import parameters
+from variables import parameters
 
 # Function to check balance
 def check_balance(cursor, id):
