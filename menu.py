@@ -23,7 +23,7 @@ def main_menu():
     return choice
 
 def execute_choice(choice):
-    # Implement balance function
+    # Implement check balance function
     if choice.find("1") == 0:
         spec_input(int, id, "Enter your account number: ")
         balance = check_balance(cursor, id,)

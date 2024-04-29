@@ -1,8 +1,9 @@
 from database import create_tables
 
 # Function to check balance
-def check_balance(cursor, id):
+def check_balance(cursor, connection, id):
     cursor.execute("SELECT balance FROM users WHERE id = %s", (id,))
+    connection.commit()
     balance = cursor.fetchone()
     return balance[0] if balance else None
 
