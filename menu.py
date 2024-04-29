@@ -1,6 +1,6 @@
-from database import create_tables, cursor
-from variables import id, parameters
-from functions import check_balance, deposit, withdraw, delete_account, modify_account, spec_input
+from database import connection, cursor
+from variables import id
+from functions import check_balance, deposit, withdraw, create_account, delete_account, modify_account, spec_input
 import inquirer
 import random
 
@@ -54,13 +54,13 @@ def execute_choice(choice):
     elif choice.find("4") == 0:
         genID = random.randint(1, 99999)
         spec_input(int, pin, "Enter your PIN number: ")
-        parameters = (genID, pin, 1000, False)
-        create_tables(parameters)
+        parameters = (genID, pin, int(1000), False)
+        create_account(parameters)
     
     # Implement delete account function
     elif choice.find("5") == 0:
         spec_input(int, id, "Enter the account number to delete: ")
-        success = delete_account(cursor, id,)
+        success = delete_account(cursor, connection, id,)
         if success:
             print("Account deleted successfully.")
         else:
