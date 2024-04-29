@@ -26,7 +26,7 @@ def execute_choice(choice):
     # Implement check balance function
     if choice.find("1") == 0:
         spec_input(int, id, "Enter your account number: ")
-        balance = check_balance(cursor, id,)
+        balance = check_balance(cursor, connection, id,)
         if balance:
             print(f"Your current balance is: ${balance}")
         else:
